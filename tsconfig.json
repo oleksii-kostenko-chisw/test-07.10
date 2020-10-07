@@ -15,6 +15,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@auth/*": ["src/app/features/auth/*"],
+      "@core/*": ["src/app/core/*"]
+    }
   }
 }
