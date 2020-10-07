@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthDTO } from "@auth/models/auth.dto";
+import { AuthDTO } from '@auth/models/auth.dto';
 import { SignInService } from './sign-in.service';
 
 @Component({
@@ -22,10 +22,13 @@ export class SignInComponent implements OnInit {
   }
 
   private _formInit(): void {
-    this.signInForm = this._formBuilder.group({
-      login: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-    });
+    this.signInForm = this._formBuilder.group(
+      {
+        login: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+      },
+      { updateOn: 'blur' }
+    );
   }
 
   public get isSubmitDisabled(): boolean {
@@ -33,8 +36,16 @@ export class SignInComponent implements OnInit {
   }
 
   public submitSignInForm(): void {
+    if (!this.signInForm.valid) {
+      return;
+    }
+
     this._signInService
       .signIn(this.signInForm.value as AuthDTO)
       .subscribe((resp: any) => console.log('::: resp ', resp));
+  }
+
+  public hasError(name: string): boolean {
+    return this.signInForm.get(name).dirty && !this.signInForm.get(name).valid;
   }
 }

@@ -1,3 +1,5 @@
+$invalid-control-font-color: #ff0000;
+
 .sign-in {
   &__wrapper {
     height: 100%;
@@ -9,5 +11,15 @@
   &__form {
     max-width: 500px;
     width: 100%;
+
+    @media screen and (max-width: 415px) {
+      max-width: 90%;
+    }
   }
+}
+
+.invalid-control {
+  font-size: 0.8rem;
+  color: $invalid-control-font-color;
+  margin-top: 10px;
 }
