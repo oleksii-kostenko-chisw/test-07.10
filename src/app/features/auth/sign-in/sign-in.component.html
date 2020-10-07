@@ -5,11 +5,11 @@
     (ngSubmit)="submitSignInForm()"
   >
     <div class="form-group">
-      <label for="email-input">Email</label>
+      <label for="login-input">Username</label>
       <input
         formControlName="login"
-        id="email-input"
-        type="email"
+        id="login-input"
+        type="text"
         class="form-control"
         [class.is-invalid]="hasError('login')"
       />
@@ -31,7 +31,7 @@
       </p>
     </div>
     <button [disabled]="isSubmitDisabled" type="submit" class="btn btn-primary">
-      Submit
+      Login
     </button>
   </form>
 </div>

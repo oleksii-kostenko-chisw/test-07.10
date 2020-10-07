@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
   private _formInit(): void {
     this.signInForm = this._formBuilder.group(
       {
-        login: ['', [Validators.required, Validators.email]],
+        login: ['', [Validators.required, Validators.minLength(3)]],
         password: ['', [Validators.required, Validators.minLength(8)]],
       },
       { updateOn: 'blur' }
