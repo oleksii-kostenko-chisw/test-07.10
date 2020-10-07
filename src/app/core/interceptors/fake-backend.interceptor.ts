@@ -39,8 +39,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       const { login } = body as AuthDTO;
       const responseBody = {
         id: 1,
-        username: login.split('@')[0],
-        email: login,
+        username: login
       };
 
       return of(new HttpResponse({ status: 200, body: responseBody }));
