@@ -1,0 +1,37 @@
+<div class="sign-in__wrapper">
+  <form
+    [formGroup]="signInForm"
+    class="sign-in__form"
+    (ngSubmit)="submitSignInForm()"
+  >
+    <div class="form-group">
+      <label for="email-input">Email</label>
+      <input
+        formControlName="login"
+        id="email-input"
+        type="email"
+        class="form-control"
+        [class.is-invalid]="hasError('login')"
+      />
+      <p *ngIf="hasError('login')" class="invalid-control">
+        Login is invalid
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="password-input">Password</label>
+      <input
+        formControlName="password"
+        id="password-input"
+        type="password"
+        class="form-control"
+        [class.is-invalid]="hasError('password')"
+      />
+      <p *ngIf="hasError('password')" class="invalid-control">
+        Password is invalid
+      </p>
+    </div>
+    <button [disabled]="isSubmitDisabled" type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
+</div>
