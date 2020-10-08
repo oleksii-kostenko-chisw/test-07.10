@@ -1,0 +1,21 @@
+<div class="dropdown">
+  <button
+    class="btn btn-info dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+    (click)="toggleLangMenu()"
+  >
+    Lang
+  </button>
+  <div
+    class="dropdown-menu dropdown-menu-right"
+    [class.show]="showLangMenu"
+    aria-labelledby="dropdownMenuButton"
+  >
+    <button type="button" class="dropdown-item" (click)="setLang('en')">EN</button>
+    <button type="button" class="dropdown-item" (click)="setLang('ru')">RU</button>
+  </div>
+</div>
