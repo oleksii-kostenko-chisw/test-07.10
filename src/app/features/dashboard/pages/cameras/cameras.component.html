@@ -1,0 +1,29 @@
+<ng-container *transloco="let t">
+  <h1 class="camera__heading">
+    {{ t("pages.cameras.heading") }} {{ camerasCount }}
+  </h1>
+  <div class="camera__wrapper">
+    <div class="card camera__item" *ngFor="let camera of camerasData">
+      <img
+        [src]="camera.imageUrl"
+        class="card-img-top"
+        alt="camera {{ camera.id + 1 }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">
+          Camera {{ camera.id + 1 }}
+          <span
+            class="camera__indicator"
+            [class.camera__indicator--passed]="camera.passed"
+            [class.camera__indicator--failed]="!camera.passed"
+          ></span>
+        </h5>
+        <p class="card-text camera__text">
+          {{
+            camera.passed ? t("pages.cameras.pass") : t("pages.cameras.fail")
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-container>
