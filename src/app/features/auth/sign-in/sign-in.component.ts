@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from "@angular/router";
 import { AuthDTO } from '@auth/models/auth.dto';
 import { SignInService } from './sign-in.service';
 
@@ -14,7 +15,8 @@ export class SignInComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _signInService: SignInService
+    private _signInService: SignInService,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +44,7 @@ export class SignInComponent implements OnInit {
 
     this._signInService
       .signIn(this.signInForm.value as AuthDTO)
-      .subscribe((resp: any) => console.log('::: resp ', resp));
+      .subscribe((resp: any) => this._router.navigate(['/cameras']));
   }
 
   public hasError(name: string): boolean {

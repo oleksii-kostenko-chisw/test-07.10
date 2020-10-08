@@ -7,6 +7,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/auth/auth.module').then((module) => module.AuthModule),
   },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./features/dashboard/dashboard.module').then(
+        (module) => module.DashboardModule
+      ),
+  }
 ];
 
 @NgModule({
