@@ -1,6 +1,21 @@
 .header {
+  &__user-info {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 415px) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    
+  }
+
   &__user-name {
     margin: 0 15px;
+
+    @media screen and (max-width: 415px) {
+      margin: 0 0 15px 0;
+    }
   }
   
   &__name-highlight {
