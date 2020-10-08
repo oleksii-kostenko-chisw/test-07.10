@@ -1,36 +1,52 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light header">
-  <a class="navbar-brand" routerLink="/">[L]ogo</a>
+<ng-container *transloco="let t">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light header">
+    <a class="navbar-brand" routerLink="/">[L]ogo</a>
 
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    (click)="toggleMenuHandler()"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" [class.show]="showMenu">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/cameras">Cameras</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/reporting">Reporting</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/settings">Settings</a>
-      </li>
-    </ul>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="toggleMenuHandler()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="showMenu">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/cameras">{{
+            t("header.menu.cameras")
+          }}</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/reporting">{{
+            t("header.menu.reports")
+          }}</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/settings">{{
+            t("header.menu.settings")
+          }}</a>
+        </li>
+      </ul>
 
-    <div class="header__user-info my-2 my-lg-0">
-      <p class="header__user-name">Hello <span class="header__name-highlight">{{ userName }}</span>!</p>
-      <button type="button" class="btn btn-secondary" (click)="logoutHandler()">
-        Logout
-      </button>
+      <div class="header__user-info my-2 my-lg-0">
+        <p class="header__user-name">
+          {{ t("header.userGreeting") }}
+          <span class="header__name-highlight">{{ userName }}</span
+          >!
+        </p>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="logoutHandler()"
+        >
+          Logout
+        </button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</ng-container>

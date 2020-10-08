@@ -3,6 +3,10 @@ $failed-camera-color: red;
 $indicator-size: 15px;
 
 .camera {
+  &__heading {
+    margin: 5px;
+  }
+  
   &__wrapper {
     padding: 5px;
     display: flex;

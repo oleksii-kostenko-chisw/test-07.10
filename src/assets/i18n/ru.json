@@ -1,0 +1,17 @@
+{
+  "header": {
+    "menu": {
+      "cameras": "Камеры",
+      "reports": "Отчеты",
+      "settings": "Настройки"
+    },
+    "userGreeting": "Привет,"
+  },
+  "pages": {
+    "cameras": {
+      "heading": "Камеры: ",
+      "pass": "Порядок",
+      "fail": "Ошибка"
+    }
+  }
+}

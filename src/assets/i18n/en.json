@@ -1,0 +1,17 @@
+{
+  "header": {
+    "menu": {
+      "cameras": "Cameras",
+      "reports": "Reports",
+      "settings": "Settings"
+    },
+    "userGreeting": "Hello"
+  },
+  "pages": {
+    "cameras": {
+      "heading": "Cameras: ",
+      "pass": "Pass",
+      "fail": "Fail"
+    }
+  }
+}
