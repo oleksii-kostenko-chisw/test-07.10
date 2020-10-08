@@ -19,7 +19,7 @@ export class CamerasComponent implements OnInit {
 
   ngOnInit(): void {
     this._camerasService
-      .getCamerasData(20)
+      .getCamerasData(18)
       .pipe(delay(500), repeat())
       .subscribe((resp: CamerasResponse) => {
         this.camerasData = resp.cameras;

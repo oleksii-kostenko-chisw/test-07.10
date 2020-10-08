@@ -1,0 +1,24 @@
+{
+  "sign-in": {
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "loginError": "Неверное имя пользователя",
+    "passwordError": "Неверный пароль",
+    "loginButton": "Войти"
+  },
+  "header": {
+    "menu": {
+      "cameras": "Камеры",
+      "reports": "Отчеты",
+      "settings": "Настройки"
+    },
+    "userGreeting": "Привет,"
+  },
+  "pages": {
+    "cameras": {
+      "heading": "Камеры: ",
+      "pass": "Порядок",
+      "fail": "Ошибка"
+    }
+  }
+}

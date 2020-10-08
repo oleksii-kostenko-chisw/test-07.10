@@ -1,0 +1,24 @@
+{
+  "sign-in": {
+    "username": "Username",
+    "password": "Password",
+    "loginError": "Login is invalid",
+    "passwordError": "Password is invalid",
+    "loginButton": "Login"
+  },
+  "header": {
+    "menu": {
+      "cameras": "Cameras",
+      "reports": "Reports",
+      "settings": "Settings"
+    },
+    "userGreeting": "Hello"
+  },
+  "pages": {
+    "cameras": {
+      "heading": "Cameras: ",
+      "pass": "Pass",
+      "fail": "Fail"
+    }
+  }
+}

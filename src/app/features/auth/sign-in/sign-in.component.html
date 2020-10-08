@@ -1,37 +1,47 @@
-<div class="sign-in__wrapper">
-  <form
-    [formGroup]="signInForm"
-    class="sign-in__form"
-    (ngSubmit)="submitSignInForm()"
-  >
-    <div class="form-group">
-      <label for="login-input">Username</label>
-      <input
-        formControlName="login"
-        id="login-input"
-        type="text"
-        class="form-control"
-        [class.is-invalid]="hasError('login')"
-      />
-      <p *ngIf="hasError('login')" class="invalid-control">
-        Login is invalid
-      </p>
-    </div>
-    <div class="form-group">
-      <label for="password-input">Password</label>
-      <input
-        formControlName="password"
-        id="password-input"
-        type="password"
-        class="form-control"
-        [class.is-invalid]="hasError('password')"
-      />
-      <p *ngIf="hasError('password')" class="invalid-control">
-        Password is invalid
-      </p>
-    </div>
-    <button [disabled]="isSubmitDisabled" type="submit" class="btn btn-primary">
-      Login
-    </button>
-  </form>
-</div>
+<ng-container *transloco="let t">
+  <div class="sign-in__wrapper">
+    <form
+      [formGroup]="signInForm"
+      class="sign-in__form"
+      (ngSubmit)="submitSignInForm()"
+    >
+      <div class="form-group">
+        <label for="login-input">
+          {{ t("sign-in.username") }}
+        </label>
+        <input
+          formControlName="login"
+          id="login-input"
+          type="text"
+          class="form-control"
+          [class.is-invalid]="hasError('login')"
+        />
+        <p *ngIf="hasError('login')" class="invalid-control">
+          {{ t("sign-in.loginError") }}
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="password-input">
+          {{ t("sign-in.password") }}
+        </label>
+        <input
+          formControlName="password"
+          id="password-input"
+          type="password"
+          class="form-control"
+          [class.is-invalid]="hasError('password')"
+        />
+        <p *ngIf="hasError('password')" class="invalid-control">
+          {{ t("sign-in.passwordError") }}
+        </p>
+      </div>
+      <button
+        [disabled]="isSubmitDisabled"
+        type="submit"
+        class="btn btn-primary"
+      >
+        {{ t("sign-in.loginButton") }}
+      </button>
+    </form>
+  </div>
+</ng-container>
