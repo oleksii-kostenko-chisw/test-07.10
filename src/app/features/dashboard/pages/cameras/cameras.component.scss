@@ -1,0 +1,32 @@
+$passed-camera-color: green;
+$failed-camera-color: red;
+$indicator-size: 15px;
+
+.camera {
+  &__wrapper {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    min-width: 100px;
+    margin: 5px;
+    flex: 1 1 auto;
+  }
+  
+  &__indicator {
+    display: inline-block;
+    width: $indicator-size;
+    height: $indicator-size;
+    border-radius: $indicator-size;
+
+    &--passed {
+      background-color: $passed-camera-color;
+    }
+
+    &--failed {
+      background-color: $failed-camera-color;
+    }
+  }
+}
