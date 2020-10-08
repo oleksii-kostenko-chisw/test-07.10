@@ -57,11 +57,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       const response: CamerasResponse = {
         cameras,
         count
-      }
+      };
+
       for (let index = 0; index < count; index++) {
         const item: CameraItem = {
           id: index,
-          imageUrl: `${imagesUrl}?random=${index}`,
+          imageUrl: `${imagesUrl}?random=${new Date().valueOf() + index}`,
           passed: Math.random() < 0.6
         };
         cameras.push(item);

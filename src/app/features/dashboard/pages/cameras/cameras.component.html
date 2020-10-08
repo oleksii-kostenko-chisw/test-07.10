@@ -1,3 +1,4 @@
+<h1 class="camera__heading">Cameras: {{camerasCount}}</h1>
 <div class="camera__wrapper">
   <div class="card camera__item" *ngFor="let camera of camerasData">
     <img [src]="camera.imageUrl" class="card-img-top" alt="camera {{camera.id + 1}}" />
