@@ -1,4 +1,11 @@
 {
+  "sign-in": {
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "loginError": "Неверное имя пользователя",
+    "passwordError": "Неверный пароль",
+    "loginButton": "Войти"
+  },
   "header": {
     "menu": {
       "cameras": "Камеры",

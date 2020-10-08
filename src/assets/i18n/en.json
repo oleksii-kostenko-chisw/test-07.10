@@ -1,4 +1,11 @@
 {
+  "sign-in": {
+    "username": "Username",
+    "password": "Password",
+    "loginError": "Login is invalid",
+    "passwordError": "Password is invalid",
+    "loginButton": "Login"
+  },
   "header": {
     "menu": {
       "cameras": "Cameras",
