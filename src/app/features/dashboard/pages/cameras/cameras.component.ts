@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { delay, repeat, switchMap } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { delay, pluck, repeat, takeUntil } from 'rxjs/operators';
 import {
   CameraItem,
-  CamerasResponse,
 } from '../../models/cameras-response.interface';
 import { CamerasService } from './cameras.service';
 
@@ -11,19 +11,29 @@ import { CamerasService } from './cameras.service';
   templateUrl: './cameras.component.html',
   styleUrls: ['./cameras.component.scss'],
 })
-export class CamerasComponent implements OnInit {
-  public camerasData: CameraItem[];
-  public camerasCount: number;
+export class CamerasComponent implements OnInit, OnDestroy {
+  private _destroy$: Subject<void> = new Subject();
+  public camerasData$: Observable<CameraItem[]>;
+  public camerasCount$: Observable<number>;
 
   constructor(private _camerasService: CamerasService) {}
 
   ngOnInit(): void {
     this._camerasService
       .getCamerasData(18)
-      .pipe(delay(500), repeat())
-      .subscribe((resp: CamerasResponse) => {
-        this.camerasData = resp.cameras;
-        this.camerasCount = resp.count;
-      });
+      .pipe(takeUntil(this._destroy$), delay(500), repeat())
+      .subscribe();
+
+    this.camerasData$ = this._camerasService.camerasData$.pipe(
+      pluck('cameras')
+    );
+    this.camerasCount$ = this._camerasService.camerasData$.pipe(
+      pluck('count')
+    );
+  }
+
+  ngOnDestroy(): void {
+    this._destroy$.next();
+    this._destroy$.complete();
   }
 }

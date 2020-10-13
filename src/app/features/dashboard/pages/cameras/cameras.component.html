@@ -1,9 +1,9 @@
 <ng-container *transloco="let t">
   <h1 class="camera__heading">
-    {{ t("pages.cameras.heading") }} {{ camerasCount }}
+    {{ t("pages.cameras.heading") }} {{ camerasCount$ | async }}
   </h1>
   <div class="camera__wrapper">
-    <div class="card camera__item" *ngFor="let camera of camerasData">
+    <div class="card camera__item" *ngFor="let camera of (camerasData$ | async)">
       <img
         [src]="camera.imageUrl"
         class="card-img-top"
