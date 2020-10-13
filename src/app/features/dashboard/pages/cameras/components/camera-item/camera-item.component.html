@@ -1,0 +1,24 @@
+<ng-container *transloco="let t">
+  <div class="card camera__item">
+    <img
+      [src]="cameraData.imageUrl"
+      class="card-img-top"
+      alt="camera {{ cameraData.id + 1 }}"
+    />
+    <div class="card-body">
+      <h2 class="card-title">
+        Camera {{ cameraData.id + 1 }}
+        <span
+          class="camera__indicator"
+          [class.camera__indicator--passed]="cameraData.passed"
+          [class.camera__indicator--failed]="!cameraData.passed"
+        ></span>
+      </h2>
+      <p class="card-text camera__text">
+        {{
+          cameraData.passed ? t("pages.cameras.pass") : t("pages.cameras.fail")
+        }}
+      </p>
+    </div>
+  </div>
+</ng-container>
