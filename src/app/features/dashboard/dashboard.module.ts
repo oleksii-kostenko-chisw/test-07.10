@@ -8,6 +8,7 @@ import { CamerasComponent } from './pages/cameras/cameras.component';
 import { ReportingComponent } from './pages/reporting/reporting.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { TranslocoRootModule } from "src/app/transloco/transloco-root.module";
+import { camerasComponents } from "./pages/cameras/components";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TranslocoRootModule } from "src/app/transloco/transloco-root.module";
     CamerasComponent,
     ReportingComponent,
     SettingsComponent,
+    ...camerasComponents,
   ],
   imports: [
     CommonModule,
